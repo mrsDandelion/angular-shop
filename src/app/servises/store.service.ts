@@ -1,4 +1,3 @@
-//import { TodoListItem } from 'src/app/todo-list/todo-list-item.model';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {BehaviorSubject} from 'rxjs';
@@ -110,32 +109,46 @@ export class StoreService {
       } 
     ]
   }
-  public visibilityMen = true;
-  public visibilityWoman = true;
-  public visibilityChild = true;
-  
-  public getVisibilityMen(){
-    return this.visibilityMen;
-  }
-  public getVisibilityWoman(){
-    return this.visibilityWoman;
-  }
-  public getVisibilityChild(){
-    return this.visibilityChild;
-  }
-  public setDifferentValueMen(){
-    this.visibilityMen = !this.visibilityMen;
-  }
-  public setDifferentValueWoman(){
-    this.visibilityWoman = !this.visibilityWoman;
-  }
-  public setDifferentValueChild(){
-    this.visibilityChild = !this.visibilityChild;
-  }
-  subject = new BehaviorSubject<any>(this.collectionClothes);
 
+  public visibility = {
+    men: true,
+    women: true,
+    child: true
+  }
+
+  subjectVisibl = new BehaviorSubject<any>(this.visibility);
+
+  public getVisibility(){
+    return this.subjectVisibl
+  }
+  public setVisibility(type){
+    if(type === 'men'){
+      this.visibility.men = !this.visibility.men       
+    }
+    if(type === 'women'){
+      this.visibility.women = !this.visibility.women
+    }
+    if(type === 'child'){
+      this.visibility.child = !this.visibility.child
+    }
+    this.subjectVisibl.next(
+      this.visibility
+    )  
+  }
+  public setVisibilityAll(){
+    this.subjectVisibl.next(
+      {
+        men: true,
+        women: true,
+        child: true
+      }
+    )  
+  }
+  
+  subjectClothes = new BehaviorSubject<any>(this.collectionClothes);
+  
   public getСlothes(): Observable<{men:Product[],woman:Product[],child:Product[]}> {
-    return this.subject;
+    return this.subjectClothes;
   }
   public sortCollectionByPrice(){
     for(let category in this.collectionClothes){
@@ -144,9 +157,9 @@ export class StoreService {
         return a.price - b.price;
       })}
     }
-    this.subject.next(this.collectionClothes);
+    this.subjectClothes.next(this.collectionClothes);
   }
-  
+
   public sortCollectionByName(){
     for(let category in this.collectionClothes){
       for(let item = 0; item < this.collectionClothes[category].length; item++){
@@ -154,7 +167,6 @@ export class StoreService {
         return a.name > b.name;
       })}
     }
-    this.subject.next(this.collectionClothes);
-  }
-  
+    this.subjectClothes.next(this.collectionClothes);
+  }  
 }   

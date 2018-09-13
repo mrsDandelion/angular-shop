@@ -10,33 +10,19 @@ export class VisibilityItemsComponent implements OnInit {
 
   constructor(private StoreService: StoreService) { }
 
+  public visibilityItems
+
   public setVisibilityAll(){
-    this.StoreService.visibilityChild = true;
-    this.StoreService.visibilityMen = true;
-    this.StoreService.visibilityWoman = true;    
+    this.StoreService.setVisibilityAll();   
   }
-  public setVisibilityChild(){
-    this.StoreService.visibilityChild = !this.StoreService.visibilityChild;
-  }
-  public setVisibilityMen(){
-    this.StoreService.visibilityMen = !this.StoreService.visibilityMen;
-  }
-  public setVisibilityWoman(){
-    this.StoreService.visibilityWoman = !this.StoreService.visibilityWoman;
-  }
+  
+  public setVisibility(type){
+    this.StoreService.setVisibility(type);
+  } 
 
-  public getVisibillityItems(nameItems){
-    if(nameItems === 'men'){
-      return this.StoreService.getVisibilityMen();
-    }
-    if(nameItems === 'women'){
-      return this.StoreService.getVisibilityWoman();
-    }
-    if(nameItems === 'children'){
-      return this.StoreService.getVisibilityChild();
-    }
-  }
   ngOnInit() {
+    this.StoreService.getVisibility().subscribe(value => {
+      this.visibilityItems = value;     
+    });
   }
-
 }

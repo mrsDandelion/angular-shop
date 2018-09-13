@@ -1,22 +1,22 @@
 <div class = "wrapperVisibility">
     <div class = "content"> 
-        <p *ngIf = "getVisibillityItems('men')">
-            <input type = "checkbox" checked  id = "men" (change) = "setVisibilityMen()"><label for = "men">MEN</label>
+        <p *ngIf = "visibilityItems.men">
+            <input type = "checkbox" checked  id = "men" (change) = "setVisibility('men')"><label for = "men">MEN</label>
         </p>
-        <p *ngIf = "!getVisibillityItems('men')">
-            <input type = "checkbox"  id = "men" (change) = "setVisibilityMen()"><label for = "men">MEN</label>
+        <p *ngIf = "!visibilityItems.men">
+            <input type = "checkbox"  id = "men" (change) = "setVisibility('men')"><label for = "men">MEN</label>
         </p>
-        <p *ngIf = "getVisibillityItems('women')">
-            <input type = "checkbox" checked id = "women" (change) = "setVisibilityWoman()"><label for = "women">WOMEN</label>
+        <p *ngIf = "visibilityItems.women">
+            <input type = "checkbox" checked id = "women" (change) = "setVisibility('women')"><label for = "women">WOMEN</label>
         </p>
-        <p *ngIf = "!getVisibillityItems('women')">
-            <input type = "checkbox" id = "women" (change) = "setVisibilityWoman()"><label for = "women">WOMEN</label>
+        <p *ngIf = "!visibilityItems.women">
+            <input type = "checkbox" id = "women" (change) = "setVisibility('women')"><label for = "women">WOMEN</label>
         </p>
-        <p *ngIf = "getVisibillityItems('children')">
-            <input type = "checkbox" checked id = "children" (change) = "setVisibilityChild()"><label for = "children">CHILDREN</label>
+        <p *ngIf = "visibilityItems.child">
+            <input type = "checkbox" checked id = "children" (change) = "setVisibility('child')"><label for = "children">CHILDREN</label>
         </p>
-        <p *ngIf = "!getVisibillityItems('children')">
-            <input type = "checkbox" id = "children" (change) = "setVisibilityChild()"><label for = "children">CHILDREN</label>
+        <p *ngIf = "!visibilityItems.child">
+            <input type = "checkbox" id = "children" (change) = "setVisibility('child')"><label for = "children">CHILDREN</label>
         </p>
         <input type = "button" value = "SEE ALL PRODUCTS" (click) = "setVisibilityAll()">
     </div>

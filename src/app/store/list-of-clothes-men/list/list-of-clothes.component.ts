@@ -12,7 +12,12 @@ export class ListOfClothesComponent implements OnInit {
 
   ngOnInit() {
     this.StoreService.getСlothes().subscribe(products => {
-      this.clothesItems = createObjForSlider(products)     
+      this.clothesItems = createObjForSlider(products);     
+    });
+
+    this.StoreService.getVisibility().subscribe(value => {
+      this.visibilityItems = value;     
+      console.log(this.visibilityItems)
     });
 
     function createObjForSlider(products){
@@ -36,6 +41,7 @@ export class ListOfClothesComponent implements OnInit {
   }
 
   public clothesItems
+  public visibilityItems
 
   public positionSliders = {
     men: 0,
@@ -43,7 +49,7 @@ export class ListOfClothesComponent implements OnInit {
     child: 0
   }
 
-  public getVisibillityItems(nameItems){
+  /*public getVisibillityItems(nameItems){
     if(nameItems === 'men'){
       return this.StoreService.getVisibilityMen();
     }
@@ -53,7 +59,7 @@ export class ListOfClothesComponent implements OnInit {
     if(nameItems === 'child'){
       return this.StoreService.getVisibilityChild();
     }
-  }
+  }*/
 
   public setleft(value){
     if(value === "men" && this.positionSliders.men === 0){
