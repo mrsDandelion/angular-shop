@@ -1,0 +1,36 @@
+.itemOfCloth
+{
+    height: 360px;
+    width: 300px;
+    display: inline-flex;
+    cursor: pointer;
+    border: 6px solid rgba(0,0,0,0); 
+    padding: 20px;
+    background-color: #f5f6f7;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 30px;
+    box-sizing: border-box;
+}
+.itemOfCloth:hover
+{
+    border: 6px solid #aa9b77;    
+}
+.content
+{
+    width: 1150px;
+    margin: auto;
+    text-align: center;
+}
+button
+{
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 25px;
+}
+button:hover
+{
+    color: #aa9b77;
+}

@@ -1,0 +1,20 @@
+<div class = "wrapperSizeColor">
+  <div>
+      <select>
+        <option>SIZE</option>
+        <option *ngFor="let size of clothItem.size">{{size}}</option>
+      </select>
+  </div>
+  <div class="wrapperColor">
+    <div *ngFor="let color of clothItem.color">
+      <div [style.background-color] = 'color' class = "colorItem"></div>
+    </div>
+  </div>
+</div>
+<div class = "wrapperImg">
+  <img src = 'src/app/store/item/images/{{clothItem.image}}' alt = {{clothItem.name}}/>
+</div>
+<div class = "wrapperMainInfo">
+  <p>{{clothItem.name}}</p>
+  <p>{{clothItem.price|currency}}</p>
+</div>

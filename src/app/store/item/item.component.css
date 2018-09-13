@@ -1,0 +1,33 @@
+.colorItem
+{
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.colorItem
+{
+    margin-left: 5px;
+}
+.wrapperColor
+{
+    display: inline-flex;
+    justify-self: end
+}
+.wrapperMainInfo, .wrapperSizeColor
+{
+    display: flex;
+    justify-content: space-between;
+}
+.wrapperMainInfo p:first-child
+{
+    color: #aa9b77;
+    font-weight: bold;    
+}
+.wrapperSizeColor select
+{
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

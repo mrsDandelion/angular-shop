@@ -1,0 +1,35 @@
+input[type = "button"]{
+    width: 200px;
+    height: 50px;
+    background-color: #aa9b77;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;   
+    float: right; 
+}
+input[type = "button"]:hover{
+    background-color: #817558;
+}
+.wrapperVisibility
+{
+    height: 140px;
+    background-color: #f5f6f7;
+    display: flex;
+}
+.content
+{
+    width: 1150px;
+    margin: auto;
+    
+}
+.wrapperVisibility p
+{
+    display: inline-block;
+    margin-right: 42px;
+}
+label
+{
+    cursor: pointer;
+}
