@@ -2,16 +2,16 @@
     <a [routerLink]="['/store/123',{id:2, type:'men'}]">About</a>
   <div *ngIf = "getVisibillityItems('men')">
     <h2>MEN</h2>
-    <p>{{positionSliderMen + 1}} / {{clotherItemsMen.length}}</p>
+    <p>{{positionSliderMen + 1}} / {{clothesItems.men.length}}</p>
     <p><button (click) = "setleft('men')"><</button><button (click) = "setRight('men')">></button></p>
-    <app-item-of-clothes *ngFor="let item of clotherItemsMen[positionSliderMen]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <app-item-of-clothes *ngFor="let item of clothesItems.men[positionSliderMen]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
   </div>
   <div *ngIf = "getVisibillityItems('women')">
     <h2>WOMEN</h2>
-    <app-item-of-clothes *ngFor="let item of clotherItemsWoman"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <app-item-of-clothes *ngFor="let item of clothesItems.woman[0]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
   </div>
   <div *ngIf = "getVisibillityItems('child')">
     <h2>CHILDREN</h2>
-    <app-item-of-clothes *ngFor="let item of clotherItemsChild"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <app-item-of-clothes *ngFor="let item of clothesItems.child[0]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
   </div>
 </div>

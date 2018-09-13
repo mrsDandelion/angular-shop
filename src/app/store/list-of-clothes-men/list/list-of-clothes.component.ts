@@ -11,29 +11,30 @@ export class ListOfClothesComponent implements OnInit {
   constructor(private StoreService: StoreService) { }
 
   ngOnInit() {
-    this.clotherItemsMen = createArray(this.StoreService.getСlothes().men);  
-    this.clotherItemsWoman = this.StoreService.getСlothes().woman;
-    this.clotherItemsChild = this.StoreService.getСlothes().child;
+    this.StoreService.getСlothes().subscribe(products => {
+      this.clothesItems = createObjForSlider(products)     
+    });
 
-    function createArray(arr){
-      const array: any = [];
-        for (let j = 0, i = 0; j < arr.length / 3 || i < arr.length; j++, i = i + 3) {
+    function createObjForSlider(products){
+      for(let type in products){
+        let array = [];
+        for (let j = 0, i = 0; j < products[type].length / 3 || i < products[type].length; j++, i = i + 3) {
           array[j] = [];
-          array[j].push(arr[i]);
-          if (arr[i + 1]) {
-            array[j].push(arr[i + 1]);
+          array[j].push(products[type][i]);
+          if (products[type][i + 1]) {
+            array[j].push(products[type][i + 1]);
           }
-          if (arr[i + 2]) {
-            array[j].push(arr[i + 2]);
-          }
+          if (products[type][i + 2]) {
+            array[j].push(products[type][i + 2]);
+          }          
         }
-        return array;
+        products[type] = array;
+      }
+      return products;
     }
   }
 
-  public clotherItemsMen = [];
-  public clotherItemsWoman = [];
-  public clotherItemsChild = [];
+  public clothesItems
 
   public positionSliderMen = 0;
   public positionSliderWoman = 0;
@@ -53,7 +54,7 @@ export class ListOfClothesComponent implements OnInit {
 
   public setleft(value){
     if(value === "men" && this.positionSliderMen === 0){
-      this.positionSliderMen = this.clotherItemsMen.length - 1;
+      this.positionSliderMen = this.clothesItems.men.length - 1;
       return 
     }
     if(value === "men"){
@@ -63,7 +64,7 @@ export class ListOfClothesComponent implements OnInit {
   }
 
   public setRight(value){
-    if(value === "men" && this.positionSliderMen === this.clotherItemsMen.length - 1){
+    if(value === "men" && this.positionSliderMen === this.clothesItems.men.length - 1){
       this.positionSliderMen = 0;
       return 
     }

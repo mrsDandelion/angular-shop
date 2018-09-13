@@ -1,5 +1,8 @@
 //import { TodoListItem } from 'src/app/todo-list/todo-list-item.model';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
+import {Product} from './cloth.model'
 
 @Injectable({
   providedIn: 'root'
@@ -7,48 +10,6 @@ import { Injectable } from '@angular/core';
 export class StoreService {
 
   constructor() { }
-
-  public visibilityMen = true;
-  public visibilityWoman = true;
-  public visibilityChild = true;
-  
-  public getVisibilityMen(){
-    return this.visibilityMen;
-  }
-  public getVisibilityWoman(){
-    return this.visibilityWoman;
-  }
-  public getVisibilityChild(){
-    return this.visibilityChild;
-  }
-  public setDifferentValueMen(){
-    this.visibilityMen = !this.visibilityMen;
-  }
-  public setDifferentValueWoman(){
-    this.visibilityWoman = !this.visibilityWoman;
-  }
-  public setDifferentValueChild(){
-    this.visibilityChild = !this.visibilityChild;
-  }
-  public getСlothes()/*: TodoListItem[]*/ {
-    return this.collectionClothes;
-  }
-  public sortCollectionByPrice(){
-    for(let category in this.collectionClothes){
-      for(let item = 0; item < this.collectionClothes[category].length; item++){
-      this.collectionClothes[category].sort((a, b)=>{
-        return a.price - b.price;
-      })}
-    }
-  }
-  public sortCollectionByName(){
-    for(let category in this.collectionClothes){
-      for(let item = 0; item < this.collectionClothes[category].length; item++){
-      this.collectionClothes[category].sort((a, b)=>{
-        return a.name > b.name;
-      })}
-    }
-  }
   public collectionClothes = {
     men: [
       {
@@ -149,4 +110,50 @@ export class StoreService {
       } 
     ]
   }
+  public visibilityMen = true;
+  public visibilityWoman = true;
+  public visibilityChild = true;
+  
+  public getVisibilityMen(){
+    return this.visibilityMen;
+  }
+  public getVisibilityWoman(){
+    return this.visibilityWoman;
+  }
+  public getVisibilityChild(){
+    return this.visibilityChild;
+  }
+  public setDifferentValueMen(){
+    this.visibilityMen = !this.visibilityMen;
+  }
+  public setDifferentValueWoman(){
+    this.visibilityWoman = !this.visibilityWoman;
+  }
+  public setDifferentValueChild(){
+    this.visibilityChild = !this.visibilityChild;
+  }
+  subject = new BehaviorSubject<any>(this.collectionClothes);
+
+  public getСlothes(): Observable<{men:Product[],woman:Product[],child:Product[]}> {
+    return this.subject;
+  }
+  public sortCollectionByPrice(){
+    for(let category in this.collectionClothes){
+      for(let item = 0; item < this.collectionClothes[category].length; item++){
+      this.collectionClothes[category].sort((a, b)=>{
+        return a.price - b.price;
+      })}
+    }
+    this.subject.next(this.collectionClothes);
+  }
+  public sortCollectionByName(){
+    for(let category in this.collectionClothes){
+      for(let item = 0; item < this.collectionClothes[category].length; item++){
+      this.collectionClothes[category].sort((a, b)=>{
+        return a.name > b.name;
+      })}
+    }
+    this.subject.next(this.collectionClothes);
+  }
+  
 }   
