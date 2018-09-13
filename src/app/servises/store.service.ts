@@ -140,12 +140,13 @@ export class StoreService {
   public sortCollectionByPrice(){
     for(let category in this.collectionClothes){
       for(let item = 0; item < this.collectionClothes[category].length; item++){
-      this.collectionClothes[category].sort((a, b)=>{
+        this.collectionClothes[category].sort((a, b)=>{
         return a.price - b.price;
       })}
     }
     this.subject.next(this.collectionClothes);
   }
+  
   public sortCollectionByName(){
     for(let category in this.collectionClothes){
       for(let item = 0; item < this.collectionClothes[category].length; item++){

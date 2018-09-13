@@ -11,9 +11,9 @@ import { CurrencyPipe } from "@angular/common"
 export class ItemOfClothesComponent implements OnInit {
   @Input() public clothItem
   
+  
   constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

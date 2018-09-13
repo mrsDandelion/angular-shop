@@ -16,8 +16,9 @@ export class ListOfClothesComponent implements OnInit {
     });
 
     function createObjForSlider(products){
+      const resultObj = {};
       for(let type in products){
-        let array = [];
+        const array = [];
         for (let j = 0, i = 0; j < products[type].length / 3 || i < products[type].length; j++, i = i + 3) {
           array[j] = [];
           array[j].push(products[type][i]);
@@ -28,17 +29,19 @@ export class ListOfClothesComponent implements OnInit {
             array[j].push(products[type][i + 2]);
           }          
         }
-        products[type] = array;
+        resultObj[type] = array;
       }
-      return products;
+      return resultObj;
     }
   }
 
   public clothesItems
 
-  public positionSliderMen = 0;
-  public positionSliderWoman = 0;
-  public positionSliderChild = 0;
+  public positionSliders = {
+    men: 0,
+    women: 0,
+    child: 0
+  }
 
   public getVisibillityItems(nameItems){
     if(nameItems === 'men'){
@@ -53,23 +56,23 @@ export class ListOfClothesComponent implements OnInit {
   }
 
   public setleft(value){
-    if(value === "men" && this.positionSliderMen === 0){
-      this.positionSliderMen = this.clothesItems.men.length - 1;
+    if(value === "men" && this.positionSliders.men === 0){
+      this.positionSliders.men = this.clothesItems.men.length - 1;
       return 
     }
     if(value === "men"){
-      this.positionSliderMen--;
+      this.positionSliders.men--;
       return 
     }
   }
 
   public setRight(value){
-    if(value === "men" && this.positionSliderMen === this.clothesItems.men.length - 1){
-      this.positionSliderMen = 0;
+    if(value === "men" && this.positionSliders.men === this.clothesItems.men.length - 1){
+      this.positionSliders.men = 0;
       return 
     }
     if(value === "men"){
-      this.positionSliderMen++;
+      this.positionSliders.men++;
       return 
     }
   }
