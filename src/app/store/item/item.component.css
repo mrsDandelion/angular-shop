@@ -1,9 +1,74 @@
+.itemCloth
+{
+    margin: auto;
+    width: 542px;
+    padding: 40px 0;
+    border: 3px solid #ac9d76;
+    background: #f5f6f8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.back
+{
+    height: 70px;
+    background: #f5f6f8;
+    display: flex;
+    align-items: center;
+}
+.back a
+{
+    color: black;
+    text-decoration: none;
+}
+.back a:hover
+{
+    color: #9c9579
+}
+.wrapperName
+{
+    display: flex;
+    align-items: center;
+}
+.wrapperName p
+{
+    display: inline-block;
+}
+.line
+{
+    content: '';
+    display: inline-block;
+    height: 1px;
+    background: #cbcbcb;
+    width: 100%;
+    margin-left: 20px;
+}
+.wrapperInfo
+{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+
+}
+.wrapperInfo > div
+{
+    display: flex;
+    justify-content: center;
+}
+.wrapperInfo > div > p:last-of-type
+{
+    margin-left: 20px;
+}
 .colorItem
 {
     height: 22px;
     width: 22px;
     border-radius: 50%;
     display: inline-block;
+}
+.wrapperName
+{
+    width: 100%;
 }
 .colorItem
 {
@@ -12,22 +77,11 @@
 .wrapperColor
 {
     display: inline-flex;
-    justify-self: end
+    justify-self: end;
+    align-items: center;
 }
-.wrapperMainInfo, .wrapperSizeColor
+.wrapperSizeColor
 {
     display: flex;
     justify-content: space-between;
-}
-.wrapperMainInfo p:first-child
-{
-    color: #aa9b77;
-    font-weight: bold;    
-}
-.wrapperSizeColor select
-{
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
 }

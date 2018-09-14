@@ -17,7 +17,6 @@ export class ListOfClothesComponent implements OnInit {
 
     this.StoreService.getVisibility().subscribe(value => {
       this.visibilityItems = value;     
-      console.log(this.visibilityItems)
     });
 
     function createObjForSlider(products){

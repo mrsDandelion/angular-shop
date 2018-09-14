@@ -1,115 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import {BehaviorSubject} from 'rxjs';
-import {Product} from './cloth.model'
+import { BehaviorSubject } from 'rxjs';
+import { Product } from './cloth.model'
+import { collectionClothes } from './clothes'
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoreService {
 
-  constructor() { }
-  public collectionClothes = {
-    men: [
-      {
-        id: '1',
-        name: 'Todo 1',
-        image: 'skirt1.png',
-        price: 100,
-        color: ['red','green','#458d'],
-        size: ['XS', 'S']
-      },
-      {
-        id: '2',
-        name: 'Aodo 2',
-        image: 'skirt2.png',
-        price: 12,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      }
-      ,
-      {
-        id: '3',
-        name: 'Codo 3',
-        image: 'skirt2.png',
-        price: 9,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      },
-      {
-        id: '4',
-        name: 'sdfodo 2',
-        image: 'skirt2.png',
-        price: 12,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      }
-      ,
-      {
-        id: '5',
-        name: 'Casodo 3',
-        image: 'skirt2.png',
-        price: 9,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      }
-    ],
-    woman: [
-      {
-        id: '11',
-        name: 'woman 1',
-        image: 'skirt1.png',
-        price: 10,
-        color: ['red','green','#458d'],
-        size: ['XS']
-      },
-      {
-        id: '12',
-        name: 'aoman 2',
-        image: 'skirt2.png',
-        price: 12,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      }
-      ,
-      {
-        id: '13',
-        name: 'noman 3',
-        image: 'skirt2.png',
-        price: 12,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      }
-    ],
-    child: [
-      {
-        id: '21',
-        name: 'child 1',
-        image: 'skirt1.png',
-        price: 10,
-        color: ['red','green','#458d'],
-        size: ['XS']
-      },
-      {
-        id: '22',
-        name: 'child 2',
-        image: 'skirt2.png',
-        price: 12,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      }
-      ,
-      {
-        id: '23',
-        name: 'child 3',
-        image: 'skirt2.png',
-        price: 12,
-        color: ['yellow','blue'],
-        size: ['S', 'M', 'L', 'XL']
-      } 
-    ]
-  }
-
+  constructor(){}
+  
   public visibility = {
     men: true,
     women: true,
@@ -144,29 +45,29 @@ export class StoreService {
       }
     )  
   }
-  
-  subjectClothes = new BehaviorSubject<any>(this.collectionClothes);
+
+  subjectClothes = new BehaviorSubject<any>(collectionClothes);
   
   public getСlothes(): Observable<{men:Product[],woman:Product[],child:Product[]}> {
     return this.subjectClothes;
   }
   public sortCollectionByPrice(){
-    for(let category in this.collectionClothes){
-      for(let item = 0; item < this.collectionClothes[category].length; item++){
-        this.collectionClothes[category].sort((a, b)=>{
+    for(let category in collectionClothes){
+      for(let item = 0; item < collectionClothes[category].length; item++){
+        collectionClothes[category].sort((a, b)=>{
         return a.price - b.price;
       })}
     }
-    this.subjectClothes.next(this.collectionClothes);
+    this.subjectClothes.next(collectionClothes);
   }
 
   public sortCollectionByName(){
-    for(let category in this.collectionClothes){
-      for(let item = 0; item < this.collectionClothes[category].length; item++){
-      this.collectionClothes[category].sort((a, b)=>{
+    for(let category in collectionClothes){
+      for(let item = 0; item < collectionClothes[category].length; item++){
+      collectionClothes[category].sort((a, b)=>{
         return a.name > b.name;
       })}
     }
-    this.subjectClothes.next(this.collectionClothes);
+    this.subjectClothes.next(collectionClothes);
   }  
 }   

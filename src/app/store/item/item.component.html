@@ -1,20 +1,27 @@
-<div class = "wrapperSizeColor">
-  <div>
-      <select>
-        <option>SIZE</option>
-        <option *ngFor="let size of clothItem.size">{{size}}</option>
-      </select>
-  </div>
-  <div class="wrapperColor">
-    <div *ngFor="let color of clothItem.color">
-      <div [style.background-color] = 'color' class = "colorItem"></div>
-    </div>
-  </div>
+<div class = "back">
+  <a [routerLink]="['/store']">< BACK TO CATALOG</a>
 </div>
-<div class = "wrapperImg">
-  <img src = 'src/app/store/item/images/{{clothItem.image}}' alt = {{clothItem.name}}/>
-</div>
-<div class = "wrapperMainInfo">
+<div class = "wrapperName">
   <p>{{clothItem.name}}</p>
-  <p>{{clothItem.price|currency}}</p>
+  <div class = "line"></div>    
+</div>
+<div class="itemCloth">  
+  <div class = "wrapperImg">
+    <img src = 'src/app/store/item/images/{{clothItem.image}}' alt = {{clothItem.name}}/>
+  </div> 
+  <div class = "wrapperInfo">
+    <div>
+      <p>{{clothItem.price|currency}}</p><p>PRICE</p>
+    </div>        
+    <div class="wrapperColor">
+      <div *ngFor="let color of clothItem.color">
+        <div [style.background-color] = 'color' class = "colorItem"></div>
+      </div>
+      <p>COLORS</p>
+    </div>
+    <div>
+      <p><span *ngFor="let size of clothItem.size">{{size}},</span></p>
+      <p>SIZES</p>
+    </div>    
+  </div>   
 </div>
