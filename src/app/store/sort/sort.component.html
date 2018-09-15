@@ -1,7 +1,9 @@
 <div class = "content">
   SORT BY
-  <select (change) = 'onChange($event.target.value)' [(value)]="selected">
-    <option value='price' selected>price</option>
-    <option value='name'>name</option>    
+  <select (change) = 'onChange($event.target.value)' value = "sortItems">
+    <option *ngIf = "sortItems === 'price'" value='price' selected>price</option>
+    <option *ngIf = "sortItems !== 'price'" value='price'>price</option>    
+    <option *ngIf = "sortItems === 'name'" value='name' selected>name</option>
+    <option *ngIf = "sortItems !== 'name'" value='name'>name</option>    
   </select>
 </div>

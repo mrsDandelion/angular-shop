@@ -9,8 +9,10 @@ import { StoreService } from './../../servises/store.service'
 })
 export class SortComponent implements OnInit {
 
-  constructor(private StoreService: StoreService) { }
-  selected = '';
+  constructor(private StoreService: StoreService){}
+
+  public sortItems
+  
   public onChange(sort){
     
     if(sort === 'name'){
@@ -21,5 +23,8 @@ export class SortComponent implements OnInit {
     }    
   }
   ngOnInit() {
+    this.StoreService.getSort().subscribe(value => {
+      this.sortItems = value;    
+    });
   }
 }

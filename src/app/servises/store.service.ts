@@ -10,7 +10,15 @@ import { collectionClothes } from './clothes'
 export class StoreService {
 
   constructor(){}
+
+  public sort = "price"
   
+  subjectSort = new BehaviorSubject<any>(this.sort);
+
+  public getSort(){
+    return this.subjectSort
+  }
+
   public visibility = {
     men: true,
     women: true,
@@ -59,6 +67,7 @@ export class StoreService {
       })}
     }
     this.subjectClothes.next(collectionClothes);
+    this.subjectSort.next("price");
   }
 
   public sortCollectionByName(){
@@ -69,5 +78,6 @@ export class StoreService {
       })}
     }
     this.subjectClothes.next(collectionClothes);
+    this.subjectSort.next("name");
   }  
 }   

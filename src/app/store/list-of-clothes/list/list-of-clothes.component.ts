@@ -11,17 +11,27 @@ export class ListOfClothesComponent implements OnInit {
   constructor(private StoreService: StoreService) { }
 
   ngOnInit() {
-    this.StoreService.getСlothes().subscribe(products => {
+
+    this.StoreService.getSort().subscribe(value => {
+      this.sortItems = value;    
+    });
+
+    if(this.sortItems === "price" || this.sortItems === undefined){
+      this.StoreService.sortCollectionByPrice();
+    } else {
+      this.StoreService.sortCollectionByName();
+    }
+    this.StoreService.getСlothes().subscribe(products => {      
       this.clothesItems = createObjForSlider(products);     
     });
 
     this.StoreService.getVisibility().subscribe(value => {
       this.visibilityItems = value;     
-    });
+    });    
 
     function createObjForSlider(products){
       const resultObj = {};
-      const coutOfImg = 3;
+      const coutOfImg:number = 3;
       for(let type in products){
         const array = [];
         for (let listSlider = 0, item = 0; 
@@ -46,6 +56,7 @@ export class ListOfClothesComponent implements OnInit {
 
   public clothesItems
   public visibilityItems
+  public sortItems
 
   public positionSliders = {
     men: 0,
