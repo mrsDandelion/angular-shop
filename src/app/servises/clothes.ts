@@ -4,23 +4,23 @@ export const collectionClothes = {
         id: '1',
         name: 'Men1',
         image: 'skirt1.png',
-        price: 100,
-        //color: ['red','green','#458d'],
+        price: 5,
+        color: ['red','green','#458d'],
         size: ['XS', 'S']
       },
       {
         id: '2',
         name: 'Men2',
         image: 'skirt2.png',
-        price: 12,
+        price: 30,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       },
       {
         id: '3',
         name: 'Men3',
-        image: 'skirt2.png',
-        price: 9,
+        image: 'bag.png',
+        price: 60,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       },
@@ -43,7 +43,7 @@ export const collectionClothes = {
       {
         id: '6',
         name: 'Men6',
-        image: 'skirt2.png',
+        image: 'bag.png',
         price: 9,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
@@ -68,43 +68,43 @@ export const collectionClothes = {
     woman: [
       {
         id: '11',
-        name: 'woman',
-        image: 'skirt1.png',
-        price: 10,
+        name: 'woman1',
+        image: 'jacket.png',
+        price: 60,
         color: ['red','green','#458d'],
         size: ['XS']
       },
       {
         id: '12',
-        name: 'aoman',
-        image: 'skirt2.png',
-        price: 12,
+        name: 'woman2',
+        image: 'sneakers.png',
+        price: 80,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       }
       ,
       {
         id: '13',
-        name: 'noman',
-        image: 'skirt2.png',
-        price: 12,
+        name: 'woman3',
+        image: 'shirt.png',
+        price: 60,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       },
       {
         id: '125',
-        name: 'aoman',
+        name: 'woman4',
         image: 'skirt2.png',
-        price: 12,
+        price: 50,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       }
       ,
       {
         id: '156',
-        name: 'noman',
-        image: 'skirt2.png',
-        price: 12,
+        name: 'woman5',
+        image: 'sneakers.png',
+        price: 90,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       }
@@ -114,7 +114,7 @@ export const collectionClothes = {
         id: '21',
         name: 'child1',
         image: 'skirt1.png',
-        price: 10,
+        price: 25,
         color: ['red','green','#458d'],
         size: ['XS']
       },
@@ -122,23 +122,23 @@ export const collectionClothes = {
         id: '22',
         name: 'child2',
         image: 'skirt2.png',
-        price: 12,
+        price: 50,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       },
       {
         id: '23',
         name: 'child3',
-        image: 'skirt2.png',
-        price: 12,
+        image: 'sneakers.png',
+        price: 60,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       },
       {
         id: '24',
         name: 'child4',
-        image: 'skirt2.png',
-        price: 12,
+        image: 'jacket.png',
+        price: 40,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
       } 
