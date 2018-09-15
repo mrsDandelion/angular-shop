@@ -24,7 +24,7 @@ export class ListOfClothesComponent implements OnInit {
       for(let type in products){
         const array = [];
         for (let j = 0, i = 0; j < products[type].length / 3 || i < products[type].length; j++, i = i + 3) {
-          array[j] = [];
+          array[j] = [];          
           array[j].push(products[type][i]);
           if (products[type][i + 1]) {
             array[j].push(products[type][i + 1]);
@@ -44,40 +44,38 @@ export class ListOfClothesComponent implements OnInit {
 
   public positionSliders = {
     men: 0,
-    women: 0,
+    woman: 0,
     child: 0
   }
 
-  /*public getVisibillityItems(nameItems){
-    if(nameItems === 'men'){
-      return this.StoreService.getVisibilityMen();
-    }
-    if(nameItems === 'women'){
-      return this.StoreService.getVisibilityWoman();
-    }
-    if(nameItems === 'child'){
-      return this.StoreService.getVisibilityChild();
-    }
-  }*/
-
   public setleft(value){
-    if(value === "men" && this.positionSliders.men === 0){
-      this.positionSliders.men = this.clothesItems.men.length - 1;
+    if((value === "men" && this.positionSliders.men === 0) ||
+        ((value === "woman" && this.positionSliders.woman === 0)) ||
+        ((value === "child" && this.positionSliders.child === 0))    
+      ){
+      this.positionSliders[value] = this.clothesItems[value].length - 1;
       return 
     }
-    if(value === "men"){
-      this.positionSliders.men--;
+    if(value === "men" ||
+      value === "woman" ||
+      value === "child"){
+      this.positionSliders[value]--;
       return 
     }
   }
 
   public setRight(value){
-    if(value === "men" && this.positionSliders.men === this.clothesItems.men.length - 1){
-      this.positionSliders.men = 0;
+    if((value === "men" && this.positionSliders.men === this.clothesItems.men.length - 1) ||
+      (value === "woman" && this.positionSliders.woman === this.clothesItems.woman.length - 1) ||
+      (value === "child" && this.positionSliders.child === this.clothesItems.child.length - 1))     
+    {
+      this.positionSliders[value] = 0;
       return 
     }
-    if(value === "men"){
-      this.positionSliders.men++;
+    if(value === "men" ||
+      value === "woman" ||
+      value === "child" ){
+      this.positionSliders[value]++;
       return 
     }
   }

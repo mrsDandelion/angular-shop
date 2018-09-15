@@ -41,6 +41,31 @@ export const collectionClothes = {
         price: 9,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
+      },
+      {
+        id: '6',
+        name: 'Codo',
+        image: 'skirt2.png',
+        price: 9,
+        color: ['yellow','blue'],
+        size: ['S', 'M', 'L', 'XL']
+      },
+      {
+        id: '7',
+        name: 'sdfodo',
+        image: 'skirt2.png',
+        price: 12,
+        color: ['yellow','blue'],
+        size: ['S', 'M', 'L', 'XL']
+      }
+      ,
+      {
+        id: '8',
+        name: 'Casodo',
+        image: 'skirt2.png',
+        price: 9,
+        color: ['yellow','blue'],
+        size: ['S', 'M', 'L', 'XL']
       }
     ],
     woman: [
@@ -68,20 +93,10 @@ export const collectionClothes = {
         price: 12,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
-      }
-    ],
-    child: [
-      {
-        id: '21',
-        name: 'child',
-        image: 'skirt1.png',
-        price: 10,
-        color: ['red','green','#458d'],
-        size: ['XS']
       },
       {
-        id: '22',
-        name: 'child',
+        id: '125',
+        name: 'aoman',
         image: 'skirt2.png',
         price: 12,
         color: ['yellow','blue'],
@@ -89,8 +104,42 @@ export const collectionClothes = {
       }
       ,
       {
+        id: '156',
+        name: 'noman',
+        image: 'skirt2.png',
+        price: 12,
+        color: ['yellow','blue'],
+        size: ['S', 'M', 'L', 'XL']
+      }
+    ],
+    child: [
+      {
+        id: '21',
+        name: 'child1',
+        image: 'skirt1.png',
+        price: 10,
+        color: ['red','green','#458d'],
+        size: ['XS']
+      },
+      {
+        id: '22',
+        name: 'child2',
+        image: 'skirt2.png',
+        price: 12,
+        color: ['yellow','blue'],
+        size: ['S', 'M', 'L', 'XL']
+      },
+      {
         id: '23',
-        name: 'child',
+        name: 'child3',
+        image: 'skirt2.png',
+        price: 12,
+        color: ['yellow','blue'],
+        size: ['S', 'M', 'L', 'XL']
+      },
+      {
+        id: '24',
+        name: 'child4',
         image: 'skirt2.png',
         price: 12,
         color: ['yellow','blue'],

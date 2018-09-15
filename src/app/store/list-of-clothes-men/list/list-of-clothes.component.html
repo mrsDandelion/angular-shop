@@ -7,10 +7,14 @@
   </div>
   <div *ngIf = "visibilityItems.women">
     <h2>WOMEN</h2>
-    <app-item-of-clothes *ngFor="let item of clothesItems.woman[0]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <p>{{positionSliders.woman + 1}} / {{clothesItems.woman.length}}</p>
+    <p><button (click) = "setleft('woman')"><</button><button (click) = "setRight('woman')">></button></p>
+    <app-item-of-clothes *ngFor="let item of clothesItems.woman[positionSliders.woman]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
   </div>
   <div *ngIf = "visibilityItems.child">
     <h2>CHILDREN</h2>
-    <app-item-of-clothes *ngFor="let item of clothesItems.child[0]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <p>{{positionSliders.child + 1}} / {{clothesItems.child.length}}</p>
+    <p><button (click) = "setleft('child')"><</button><button (click) = "setRight('child')">></button></p>
+    <app-item-of-clothes *ngFor="let item of clothesItems.child[positionSliders.child]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
   </div>
 </div>
