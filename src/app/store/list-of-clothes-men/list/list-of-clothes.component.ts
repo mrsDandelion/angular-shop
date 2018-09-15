@@ -21,17 +21,19 @@ export class ListOfClothesComponent implements OnInit {
 
     function createObjForSlider(products){
       const resultObj = {};
+      const coutOfImg = 3;
       for(let type in products){
         const array = [];
-        for (let j = 0, i = 0; j < products[type].length / 3 || i < products[type].length; j++, i = i + 3) {
-          array[j] = [];          
-          array[j].push(products[type][i]);
-          if (products[type][i + 1]) {
-            array[j].push(products[type][i + 1]);
-          }
-          if (products[type][i + 2]) {
-            array[j].push(products[type][i + 2]);
-          }          
+        for (let listSlider = 0, item = 0; 
+          listSlider < products[type].length / coutOfImg || item < products[type].length; 
+          listSlider++, item = item + coutOfImg)
+        {
+          array[listSlider] = [];         
+          let count = coutOfImg; 
+          while(count > 0){
+            array[listSlider].push(products[type][item]); 
+            count--;
+          }   
         }
         resultObj[type] = array;
       }
