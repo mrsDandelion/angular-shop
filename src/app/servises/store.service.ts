@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs';
-import { Product } from './cloth.model'
+import { Product } from './models/cloth.model'
+import { Visibility } from './models/visibl.model'
 import { collectionClothes } from './clothes'
 
 @Injectable({
@@ -15,7 +16,7 @@ export class StoreService {
   
   subjectSort = new BehaviorSubject<any>(this.sort);
 
-  public getSort(){
+  public getSort(): Observable<string>{
     return this.subjectSort
   }
 
@@ -27,7 +28,7 @@ export class StoreService {
 
   subjectVisibl = new BehaviorSubject<any>(this.visibility);
 
-  public getVisibility(){
+  public getVisibility(): Observable<Visibility>{
     return this.subjectVisibl
   }
   public setVisibility(type){
