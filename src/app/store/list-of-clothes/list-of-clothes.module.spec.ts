@@ -1,4 +1,4 @@
-import { ListOfClothesModule } from './list-of-clothes-men.module';
+import { ListOfClothesModule } from './list-of-clothes.module';
 
 describe('ListOfClothesModule', () => {
   let listOfClothesModule: ListOfClothesModule;

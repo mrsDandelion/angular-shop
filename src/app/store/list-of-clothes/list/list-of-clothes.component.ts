@@ -29,10 +29,13 @@ export class ListOfClothesComponent implements OnInit {
           listSlider++, item = item + coutOfImg)
         {
           array[listSlider] = [];         
-          let count = coutOfImg; 
-          while(count > 0){
-            array[listSlider].push(products[type][item]); 
-            count--;
+          let count = 0; 
+          while( count !== coutOfImg){
+            if(!products[type][item + count]){
+              break;
+            }
+            array[listSlider].push(products[type][item + count]); 
+            count++;
           }   
         }
         resultObj[type] = array;

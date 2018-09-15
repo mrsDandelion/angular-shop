@@ -8,16 +8,16 @@
   <div *ngIf = "clothItem.size.length === 1">
       {{clothItem.size[0]}}
   </div>
-  <div class="wrapperColor">
+  <div class="wrapperColor" *ngIf = "clothItem.color">
     <div *ngFor="let color of clothItem.color">
       <div [style.background-color] = 'color' class = "colorItem"></div>
     </div>
   </div>
 </div>
-<div class = "wrapperImg" [routerLink]="['/store/123',{id:clothItem.id}]">
-  <img src = 'src/app/store/list-of-clothes-men/item-of-clothes/images/{{clothItem.image}}' alt = {{clothItem.name}}/>
+<div class = "wrapperImg" [routerLink]="['/store/item',{id:clothItem.id}]">
+  <img src = 'src/app/store/list-of-clothes/item-of-clothes/images/{{clothItem.image}}' alt = {{clothItem.name}}/>
 </div>
 <div class = "wrapperMainInfo">
-  <p>{{clothItem.name}}</p>
-  <p>{{clothItem.price|currency}}</p>
+  <p>{{clothItem.name|uppercase}}</p>
+  <p>{{clothItem.price|currency:'EUR':code}}</p>
 </div>

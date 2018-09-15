@@ -2,24 +2,23 @@ export const collectionClothes = {
     men: [
       {
         id: '1',
-        name: 'Todo',
+        name: 'Men1',
         image: 'skirt1.png',
         price: 100,
-        color: ['red','green','#458d'],
+        //color: ['red','green','#458d'],
         size: ['XS', 'S']
       },
       {
         id: '2',
-        name: 'Aodo',
+        name: 'Men2',
         image: 'skirt2.png',
         price: 12,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
-      }
-      ,
+      },
       {
         id: '3',
-        name: 'Codo',
+        name: 'Men3',
         image: 'skirt2.png',
         price: 9,
         color: ['yellow','blue'],
@@ -27,16 +26,15 @@ export const collectionClothes = {
       },
       {
         id: '4',
-        name: 'sdfodo',
+        name: 'Men4',
         image: 'skirt2.png',
         price: 12,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
-      }
-      ,
+      },
       {
         id: '5',
-        name: 'Casodo',
+        name: 'Men5',
         image: 'skirt2.png',
         price: 9,
         color: ['yellow','blue'],
@@ -44,7 +42,7 @@ export const collectionClothes = {
       },
       {
         id: '6',
-        name: 'Codo',
+        name: 'Men6',
         image: 'skirt2.png',
         price: 9,
         color: ['yellow','blue'],
@@ -52,16 +50,15 @@ export const collectionClothes = {
       },
       {
         id: '7',
-        name: 'sdfodo',
+        name: 'Men7',
         image: 'skirt2.png',
         price: 12,
         color: ['yellow','blue'],
         size: ['S', 'M', 'L', 'XL']
-      }
-      ,
+      },
       {
         id: '8',
-        name: 'Casodo',
+        name: 'Men8',
         image: 'skirt2.png',
         price: 9,
         color: ['yellow','blue'],

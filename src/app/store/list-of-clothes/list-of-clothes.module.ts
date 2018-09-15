@@ -11,7 +11,6 @@ import {RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [ListOfClothesComponent],
-  declarations: [ListOfClothesComponent,ItemOfClothesComponent],
-  
+  declarations: [ListOfClothesComponent,ItemOfClothesComponent]
 })
 export class ListOfClothesModule { }

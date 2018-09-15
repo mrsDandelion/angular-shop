@@ -7,7 +7,7 @@ import { ItemComponent } from './store/item/item.component';
 
 const routes: Routes = [
   { path: 'store', component: AppStore},​
-  { path: 'store/123', component: ItemComponent},​
+  { path: 'store/item', component: ItemComponent},​
   { path: '', redirectTo: '/store', pathMatch: 'full' },
 ];
 
