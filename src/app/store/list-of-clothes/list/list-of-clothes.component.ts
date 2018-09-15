@@ -1,10 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { StoreService } from './../../../servises/store.service'
+import {
+  trigger,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 @Component({
   selector: 'app-list-of-clothes',
   templateUrl: './list-of-clothes.component.html',
   styleUrls: ['./list-of-clothes.component.css'],
+  animations: [
+    trigger('opacityAnimation', [
+      transition('void => *', [
+        style({opacity:0}),
+        animate(500)
+      ])
+    ])
+  ]
 })
 export class ListOfClothesComponent implements OnInit {
 

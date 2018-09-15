@@ -3,18 +3,32 @@
     <h2>MEN <p class = "line"></p></h2>
     <p>{{positionSliders.men + 1}} / {{clothesItems.men.length}}</p>
     <p><button (click) = "setleft('men')"><</button><button (click) = "setRight('men')">></button></p>
-    <app-item-of-clothes *ngFor="let item of clothesItems.men[positionSliders.men]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <div class = "slider">
+    <app-item-of-clothes [@opacityAnimation] 
+      *ngFor="let item of clothesItems.men[positionSliders.men]"  
+      [clothItem]="item" 
+      class="itemOfCloth">
+    </app-item-of-clothes>
+  </div>
   </div>
   <div *ngIf = "visibilityItems.women">
     <h2>WOMEN <p class = "line"></p></h2>
     <p>{{positionSliders.woman + 1}} / {{clothesItems.woman.length}}</p>
     <p><button (click) = "setleft('woman')"><</button><button (click) = "setRight('woman')">></button></p>
-    <app-item-of-clothes *ngFor="let item of clothesItems.woman[positionSliders.woman]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <app-item-of-clothes [@opacityAnimation]
+      *ngFor="let item of clothesItems.woman[positionSliders.woman]"  
+      [clothItem]="item" 
+      class="itemOfCloth">
+    </app-item-of-clothes>
   </div>
   <div *ngIf = "visibilityItems.child">
     <h2>CHILDREN <p class = "line"></p></h2>
     <p>{{positionSliders.child + 1}} / {{clothesItems.child.length}}</p>
     <p><button (click) = "setleft('child')"><</button><button (click) = "setRight('child')">></button></p>
-    <app-item-of-clothes *ngFor="let item of clothesItems.child[positionSliders.child]"  [clothItem]="item" class="itemOfCloth"></app-item-of-clothes>
+    <app-item-of-clothes [@opacityAnimation] 
+      *ngFor="let item of clothesItems.child[positionSliders.child]"  
+      [clothItem]="item" 
+      class="itemOfCloth">
+    </app-item-of-clothes>
   </div>
 </div>
